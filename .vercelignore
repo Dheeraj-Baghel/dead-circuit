@@ -4,4 +4,5 @@ node_modules/
 dist/
 test-results/
 playwright-report/
-pacman_animated.glb
+# Root duplicate only; never exclude public/assets/player/pacman_animated.glb.
+/pacman_animated.glb
