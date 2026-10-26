@@ -1,0 +1,100 @@
+{
+  "project": "DEAD CIRCUIT",
+  "date": "2026-10-24",
+  "checkpoint": "v2 visible third-person player — user-supplied Luall_Studio GLB with native Eating animation; manual playtest and franchise release gates remain open",
+  "scope": "Browser-game illustration, not manufactured CAD. Original game content, selected CC0 art, and a user-provided CC BY 4.0 Pacman model. No public/commercial franchise clearance claimed.",
+  "assets": [
+    { "id": "maze-layouts", "source": "src/game/levels.ts", "creator": "Original project authorship", "origin": "original symmetrical text mazes with Lockup and paired tunnels; not copied Pac-Man layouts", "thirdPartyLicense": null },
+    { "id": "hunter-rules", "source": "src/game/hunters.ts", "creator": "Original project authorship", "origin": "original implementation of arcade-inspired rules; no franchise art", "thirdPartyLicense": null },
+    { "id": "map-interface", "source": "src/ui/MapPanel.tsx", "creator": "Original project authorship", "origin": "original SVG/Canvas hunter symbols, timer ring and minimap", "thirdPartyLicense": null },
+    { "id": "original-material-details", "source": "src/render/textures.ts", "creator": "Original project authorship", "origin": "seeded grime and procedural fallback textures; original signs/screens", "thirdPartyLicense": null },
+    { "id": "entities", "source": "src/render/creature.ts", "creator": "Original project authorship", "origin": "four original merged low-poly models: masked Stalker, crawling Mimic, suspended Puppet, hunched Weeper; articulated poses and returning wisp", "thirdPartyLicense": null },
+    { "id": "environment", "source": "src/render/world.ts", "creator": "Original project authorship", "origin": "instanced wall shell/recesses, fixtures, pipes, cage, relays, puddles, dust and machinery", "thirdPartyLicense": null },
+    { "id": "utility-props", "source": "src/render/props.ts", "creator": "Original project authorship", "origin": "procedural lockers, panels and tanks; screen overlays on CC0 cabinets", "thirdPartyLicense": null },
+    { "id": "lighting-postfx", "source": "src/render/lighting.ts", "creator": "Original project authorship", "origin": "original flashlight-cookie texture and grade shader; built-in three.js MIT postprocessing helpers", "thirdPartyLicense": null },
+    { "id": "audio", "source": "src/services/audio.ts", "creator": "Original project authorship", "origin": "original chapter drones, filtered air/machinery, heartbeat, wordless cries, whisper-like air and cue synthesis; selected recorded effects separately credited below", "thirdPartyLicense": null },
+    { "id": "atmosphere-events", "source": "src/game/atmosphere.ts", "creator": "Original project authorship", "origin": "non-authoritative relief-only director; original single-fade lamps/screens and distant cosmetic silhouette, no franchise animation", "thirdPartyLicense": null },
+    { "id": "fonts", "source": "src/styles.css", "origin": "system font stacks; no distributed font files" }
+  ],
+  "externalAssets": [
+    {
+      "id": "luall-pacman-animated", "creator": "Luall_Studio", "authorUrl": "https://sketchfab.com/luall_studio",
+      "sourceUrl": "https://sketchfab.com/3d-models/pacman-animated-e5e8dfb614da4fa69182f252fa4274a8",
+      "license": "CC-BY-4.0", "licenseUrl": "https://creativecommons.org/licenses/by/4.0/", "notice": "public/assets/player/LICENSE.txt",
+      "sourceLocation": "User-provided pacman_animated.glb in this application's root; original retained unchanged.",
+      "localFiles": ["public/assets/player/pacman_animated.glb"],
+      "sha256": { "pacman_animated.glb": "980059310ad27eef7637077d20788f1d1fad41605ae1d23bf072fceb5817e9f2" },
+      "bytes": 1107616, "triangles": 30204, "skinnedMeshes": 2,
+      "animation": { "name": "Eating", "durationSeconds": 0.8333333134651184, "channels": ["Bone001_01.quaternion", "Bone_00.quaternion"], "keysPerTrack": 41 },
+      "modifications": "GLB geometry/animation bytes unchanged. Runtime whole-rig scale/grounding/facing correction, real AnimationMixer playback and small material readability adjustment. Animated radial envelope measured at all key times and reused only for this SHA-verified upload.",
+      "rightsCaveat": "The model creator's license is retained with credit and change disclosure. Fan-upload licensing is not underlying Pac-Man franchise/trademark clearance. No deployment or commercial/public use approval is claimed."
+    },
+    {
+      "id": "kenney-impact-sounds-1.0", "creator": "Kenney", "sourceUrl": "https://kenney.nl/assets/impact-sounds",
+      "license": "CC0-1.0", "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/", "notice": "public/assets/audio/KENNEY-LICENSE.txt",
+      "sourceLocation": "Existing workspace metro-rush/metro-rush-assets/assets/audio/kenney-impact-sounds/Audio; original pack license inspected before copying selected files. No other app code modified.",
+      "localFiles": ["public/assets/audio/footstep_concrete_000.ogg", "public/assets/audio/footstep_concrete_001.ogg", "public/assets/audio/footstep_concrete_002.ogg", "public/assets/audio/impactMetal_light_000.ogg", "public/assets/audio/impactMetal_heavy_000.ogg", "public/assets/audio/impactWood_light_000.ogg", "public/assets/audio/impactPlate_light_000.ogg", "public/assets/audio/impactBell_heavy_000.ogg"],
+      "sha256": {
+        "footstep_concrete_000.ogg": "d7267e183067757c92c169de2a379abea592cfca6b39bb2e8feea15221ad79fe",
+        "footstep_concrete_001.ogg": "507a75eb19b897087855a3be3cf11a12d7fa37d143ad535eeebe0b8031c7325d",
+        "footstep_concrete_002.ogg": "b21fa546d74941196b25da8a20b7010abd8c05c4fcf93545d1f344e66a664e13",
+        "impactMetal_light_000.ogg": "33b5e6e37c6e9d54e07bf5a89b12c76e879f40c1ea83cdd82714df1d6f9fec6d",
+        "impactMetal_heavy_000.ogg": "e07045693e4a2b3d165c424e3dab4c781d9ff8880a386880ac89a51315d7f831",
+        "impactWood_light_000.ogg": "eb45e35b4bed784d3f120de4afec4b0d6ac09d9e143cce8cfcb7d739e1b1f3c3",
+        "impactPlate_light_000.ogg": "6e797cf8a5bfc52d7ed5eb47c227974c1cf2a674954fec5b539cea7d62c7282c",
+        "impactBell_heavy_000.ogg": "94b8bb5f2d43ab65e4bcc32b28562416e9bc2c51d9fd4be1e333660ee52f977f"
+      },
+      "modifications": "Original OGG bytes unchanged. Runtime peak normalization to 0.6 and gain/pitch/low-pass/spatial treatment; synth fallback if fetch/decoding fails. No recorded speech or music."
+    },
+    {
+      "id": "Concrete023", "creator": "ambientCG", "sourceUrl": "https://ambientcg.com/view?id=Concrete023",
+      "downloadUrl": "https://ambientcg.com/get?file=Concrete023_1K-JPG.zip",
+      "archiveSha256": "7f61e83aa16c3613a2a77e30712f67000f1fd142849b0c45abfb79067c8f185c",
+      "localFiles": ["public/assets/materials/Concrete023_1K-JPG_Color.jpg", "public/assets/materials/Concrete023_1K-JPG_NormalGL.jpg", "public/assets/materials/Concrete023_1K-JPG_Roughness.jpg"],
+      "role": "concrete walls and recess interiors", "license": "CC0-1.0", "licenseUrl": "https://docs.ambientcg.com/license/", "notice": "public/assets/materials/LICENSE.txt",
+      "modifications": "1024 x 1024 source images recompressed JPEG quality 87; runtime color tint, repeats and normal scale; original grime overlay"
+    },
+    {
+      "id": "Tiles036", "creator": "ambientCG", "sourceUrl": "https://ambientcg.com/view?id=Tiles036",
+      "downloadUrl": "https://ambientcg.com/get?file=Tiles036_1K-JPG.zip",
+      "archiveSha256": "247cd994a4376d6bc3136f122f218d0833d597ee43e13147a4c99ddf6615ef14",
+      "localFiles": ["public/assets/materials/Tiles036_1K-JPG_Color.jpg", "public/assets/materials/Tiles036_1K-JPG_NormalGL.jpg", "public/assets/materials/Tiles036_1K-JPG_Roughness.jpg"],
+      "role": "tiled floors", "license": "CC0-1.0", "licenseUrl": "https://docs.ambientcg.com/license/", "notice": "public/assets/materials/LICENSE.txt",
+      "modifications": "JPEG quality 87; dark runtime tint and chapter-dependent roughness; no displacement"
+    },
+    {
+      "id": "Metal028", "creator": "ambientCG", "sourceUrl": "https://ambientcg.com/view?id=Metal028",
+      "downloadUrl": "https://ambientcg.com/get?file=Metal028_1K-JPG.zip",
+      "archiveSha256": "5e3fd7cb9c2ad2f9c8b0d49fd499e274d9eb9868a02a9e7c4b22f11ee6923ce6",
+      "localFiles": ["public/assets/materials/Metal028_1K-JPG_Color.jpg", "public/assets/materials/Metal028_1K-JPG_NormalGL.jpg", "public/assets/materials/Metal028_1K-JPG_Roughness.jpg"],
+      "role": "lower wall panels, ceiling and cage/machine surfaces", "license": "CC0-1.0", "licenseUrl": "https://docs.ambientcg.com/license/", "notice": "public/assets/materials/LICENSE.txt",
+      "modifications": "JPEG quality 87; runtime tint/metalness/repeats with original oxide-like streaks"
+    },
+    {
+      "id": "kenney-mini-arcade-1.2", "creator": "Kenney", "additionalCredits": ["Fleur Keijsers", "Guus Vermeulen"],
+      "sourceUrl": "https://kenney.nl/assets/mini-arcade",
+      "downloadUrl": "https://kenney.nl/media/pages/assets/mini-arcade/ece1e8f320-1721638600/kenney_mini-arcade.zip",
+      "archiveSha256": "2acfe5cb44d392e834f77cf5488528c7cd45427cdf5fb941ce99856276158c19",
+      "localFiles": ["public/assets/arcade/arcade-machine.glb", "public/assets/arcade/claw-machine.glb", "public/assets/arcade/ticket-machine.glb", "public/assets/arcade/prizes.glb", "public/assets/arcade/Textures/colormap.png"],
+      "license": "CC0-1.0", "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/", "notice": "public/assets/arcade/LICENSE.txt",
+      "modifications": "GLB geometry retained; palette saturation reduced to 0.20 and brightness to 0.72 from original archive; runtime material tint, scale/placement and original screen overlay",
+      "measuredNativeBounds": { "arcade-machine": [0.4, 0.725, 0.5375], "claw-machine": [0.653, 0.95, 0.693185], "ticket-machine": [0.4, 0.925, 0.395832], "prizes": [0.8, 0.8, 0.4] },
+      "placement": "normalized to <=1.96 high, <=1.8 wide, <=1.55 deep; front >=0.08 behind original collision plane; actual scene AABBs checked inside wall cells"
+    }
+  ],
+  "runtimeLibraries": [
+    { "name": "three", "version": "0.186.1", "sourceUrl": "https://github.com/mrdoob/three.js", "license": "MIT", "notice": "public/licenses.txt" },
+    { "name": "react", "version": "19.3.1", "sourceUrl": "https://github.com/facebook/react", "license": "MIT", "notice": "public/licenses.txt" },
+    { "name": "react-dom", "version": "19.3.1", "sourceUrl": "https://github.com/facebook/react", "license": "MIT", "notice": "public/licenses.txt" },
+    { "name": "scheduler", "version": "0.28.0", "sourceUrl": "https://github.com/facebook/react", "license": "MIT", "notice": "public/licenses.txt", "relationship": "transitive runtime dependency" }
+  ],
+  "devTools": [
+    { "name": "vite", "version": "8.3.5", "license": "MIT" },
+    { "name": "typescript", "version": "7.0.2", "license": "Apache-2.0" },
+    { "name": "vitest", "version": "5.0.5", "license": "MIT" },
+    { "name": "@playwright/test", "version": "1.64.1", "license": "Apache-2.0" },
+    { "name": "@axe-core/playwright", "version": "4.14.0", "license": "MPL-2.0" }
+  ],
+  "researchOnlyNotBundled": ["Original PAC-MAN arcade maps/code/audio", "Pac-Man Dossier", "Dark Deception", "Austin Morlan first-person experiment", "Poly Haven", "Freesound"],
+  "rightsNotes": "No source license automatically granted for original game code/art. Commercial name/franchise clearance not performed. External scenery/effects are CC0; the user-supplied Pacman player is CC BY 4.0 and carries required attribution/source/change notes. No franchise affiliation or commercial/public-release permission is implied. Original source archives remain outside production."
+}

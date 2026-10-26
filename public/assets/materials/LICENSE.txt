@@ -1,0 +1,18 @@
+ambientCG material assets — CC0 1.0 Universal
+
+Concrete023: https://ambientcg.com/view?id=Concrete023
+Tiles036: https://ambientcg.com/view?id=Tiles036
+Metal028: https://ambientcg.com/view?id=Metal028
+Official license: https://docs.ambientcg.com/license/
+CC0 terms: https://creativecommons.org/publicdomain/zero/1.0/
+
+The official ambientCG license page states that downloadable asset files are
+provided under Creative Commons CC0 1.0 Universal, including commercial use,
+modification and redistribution without permission or mandatory attribution.
+
+This project distributes only each set's 1024 x 1024 Color, NormalGL and
+Roughness JPG images. They were recompressed at JPEG quality 87. No displacement,
+DirectX normals, authoring files or preview renders are shipped. Level-specific
+tints, repeating, roughness adjustments and original grime are applied in code.
+Attribution is retained voluntarily. Materials are illustration assets, not
+claims about the mechanical properties of real construction materials.

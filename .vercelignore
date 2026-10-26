@@ -1,0 +1,7 @@
+artifacts/
+asset-inbox/
+node_modules/
+dist/
+test-results/
+playwright-report/
+pacman_animated.glb

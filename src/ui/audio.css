@@ -1,0 +1,5 @@
+/* Scare/priority captions never replace objectives or map information. */
+.sound-caption { position: absolute; z-index: 4; left: 50%; transform: translateX(-50%); bottom: 219px; max-width: min(520px, 58vw); padding: 10px 14px; background: #101c23ee; border: 1px solid #aac3bc66; color: #e5e9d8; font: 11px/1.6 var(--mono); text-align: center; pointer-events: none; }
+.sound-caption > span { display: block; margin-bottom: 4px; color: #b0d9c9; font-size: 9px; letter-spacing: 1.2px; }
+@media(max-width: 600px) { .sound-caption { bottom: 263px; width: 82%; max-width: none; font-size: 10px; } }
+@media(max-height: 620px) { .sound-caption { bottom: 148px; font-size: 9px; padding: 7px 12px; max-width: min(470px, 60vw); } .sound-caption > span { font-size: 8px; margin-bottom: 2px; } }

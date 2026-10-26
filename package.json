@@ -1,0 +1,33 @@
+{
+  "name": "dead-circuit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24 <25" },
+  "description": "Original first-person horror maze with a reliable left-side minimap. Local single-player; no backend.",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 4332 --strictPort",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4332 --strictPort",
+    "test": "vitest run",
+    "test:browser": "playwright test",
+    "test:release": "node tests/release-check.mjs",
+    "verify:clean": "node tests/clean-install.mjs"
+  },
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.64.1",
+    "@types/node": "26.6.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@types/three": "0.186.0",
+    "typescript": "7.0.2",
+    "vite": "8.3.5",
+    "vitest": "5.0.5"
+  }
+}

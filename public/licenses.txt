@@ -1,0 +1,77 @@
+DEAD CIRCUIT — runtime third-party notices
+
+Original maze layouts, enemy models, procedural grime/fallback textures, screens/signs, UI and synthesized music/ambience are authored for this project. Selected CC0 art/effects and the user-supplied CC BY 4.0 player below are also bundled. Underlying Pac-Man franchise/public-release clearance is not claimed. Working title, not a trademark-clearance claim.
+
+PACMAN ANIMATED — Luall_Studio — CC BY 4.0
+Author: https://sketchfab.com/luall_studio
+Source: https://sketchfab.com/3d-models/pacman-animated-e5e8dfb614da4fa69182f252fa4274a8
+License: https://creativecommons.org/licenses/by/4.0/
+User-supplied GLB with original Eating skeletal animation. File bytes unchanged.
+Runtime changes: scale/grounding, whole-rig facing, playback rate and subtle
+material readability adjustment. No endorsement or franchise clearance implied.
+Full model credit/change notes: assets/player/LICENSE.txt
+
+AMBIENTCG — CC0 1.0 Universal
+Concrete023, Tiles036 and Metal028 (1024 x 1024 color, OpenGL normals, roughness).
+https://ambientcg.com/view?id=Concrete023
+https://ambientcg.com/view?id=Tiles036
+https://ambientcg.com/view?id=Metal028
+Official license: https://docs.ambientcg.com/license/
+CC0: https://creativecommons.org/publicdomain/zero/1.0/
+Modifications: JPG quality-87 recompression, runtime tints/repeating/roughness.
+Additional source notes: assets/materials/LICENSE.txt
+
+KENNEY MINI ARCADE 1.2 — CC0
+Created/distributed by Kenney (www.kenney.nl)
+Additional credits: Fleur Keijsers, Guus Vermeulen.
+https://kenney.nl/assets/mini-arcade
+Selected models: arcade-machine, claw-machine, ticket-machine, prizes, colormap.
+Modifications: normalized placement, desaturated/darkened palette, material
+adjustments, original NO SIGNAL screen overlay. No game characters included.
+Original license retained at assets/arcade/LICENSE.txt.
+CC0: https://creativecommons.org/publicdomain/zero/1.0/
+Attribution retained voluntarily; CC0 permits use/modification/redistribution.
+
+KENNEY IMPACT SOUNDS 1.0 — CC0
+Created/distributed by Kenney (www.kenney.nl), 19 December 2019.
+https://kenney.nl/assets/impact-sounds
+https://creativecommons.org/publicdomain/zero/1.0/
+Selected original OGG files: footstep_concrete_000, 001, 002;
+impactMetal_light_000, impactMetal_heavy_000, impactWood_light_000,
+impactPlate_light_000, impactBell_heavy_000.
+Original OGG files are unmodified. Native decoded buffers are normalized at
+runtime and played with pitch/gain/filter/position changes. Wordless cries,
+whisper-like air, chapter drones, machinery and heartbeat are original synthesis,
+not recorded speech/music. Original license retained at assets/audio/KENNEY-LICENSE.txt.
+
+THREE.JS 0.186.1
+The MIT License
+Copyright © 2010-2026 three.js authors
+
+REACT 19.3.1 AND REACT-DOM 19.3.1
+MIT License
+Copyright (c) Meta Platforms, Inc. and affiliates.
+
+SCHEDULER (transitive React DOM runtime dependency)
+MIT License
+Copyright (c) Meta Platforms, Inc. and affiliates.
+
+The following MIT terms apply to the software above:
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

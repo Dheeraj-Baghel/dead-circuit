@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.playwright/
+playwright-report/
+test-results/
+*.log
+.DS_Store
+asset-inbox/
+# Local validation captures and raw downloads are not deployment/source inputs.
+artifacts/
+.vercel/
+.env*
+!.env.example
+*.tsbuildinfo

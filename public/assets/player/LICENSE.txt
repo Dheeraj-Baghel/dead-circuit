@@ -1,0 +1,22 @@
+Pacman animated — Luall_Studio
+
+Model supplied by the user as pacman_animated.glb, used with its embedded credit:
+Author: Luall_Studio (https://sketchfab.com/luall_studio)
+Title: Pacman animated
+Source: https://sketchfab.com/3d-models/pacman-animated-e5e8dfb614da4fa69182f252fa4274a8
+License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+
+SHA-256 of original/runtime GLB:
+980059310ad27eef7637077d20788f1d1fad41605ae1d23bf072fceb5817e9f2
+
+The GLB file bytes, supplied mesh and Eating animation keys are unchanged.
+Runtime changes: uniform normalization and grounding to the game collider,
+whole-rig facing correction, movement-facing rotation, animation playback rate,
+and a subtle emissive/roughness adjustment for dark-scene readability.
+
+The creator's attribution/license is retained; no endorsement is implied.
+The uploader's license does not establish underlying Pac-Man franchise rights
+or trademark clearance. No commercial/public release authorization is claimed.
+Other original game code/art remains separately authored and is not relicensed
+by this model's CC BY license.

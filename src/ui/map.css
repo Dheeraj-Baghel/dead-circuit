@@ -1,0 +1,95 @@
+/* Phase 2: legible instrument panel, with a stable left-side map in every
+   layout. Short viewports compact secondary legends, not essential map layers. */
+.map-panel {
+  left: 24px; top: 102px; width: min(calc(276px * var(--map-scale, 1)), calc(100dvh - 485px));
+  max-width: 340px; padding: 12px; background: #101c20f5; border-color: #8daba457;
+  max-height: calc(100dvh - 178px); overflow: auto; scrollbar-width: thin;
+}
+.map-heading { font: 9px var(--mono); letter-spacing: .5px; gap: 12px; margin: 0 0 10px; color: #d4e2d8; }
+.map-heading span:last-child { font-size: 8px; }
+.map-viewport { width: 100%; }
+.map-panel canvas { width: 100%; height: auto; aspect-ratio: 1; }
+.wave-readout { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; --wave: #b9ddc9; }
+.wave-chase, .wave-blackout { --wave: #ffb49c; }
+.wave-overload { --wave: #a4f0d5; }
+.wave-ring { flex: 0 0 46px; width: 46px; height: 46px; overflow: visible; }
+.wave-ring circle { fill: none; stroke-width: 2.5px; }
+.wave-track { stroke: #ffffff21; }
+.wave-arc { stroke: var(--wave); stroke-linecap: round; }
+.wave-ring text { fill: #f5ede0; font: 14px var(--mono); text-anchor: middle; }
+.wave-status { display: block; font: bold 10px var(--mono); letter-spacing: 1px; color: var(--wave); }
+.wave-readout small { display: block; margin-top: 5px; font: 8px var(--mono); letter-spacing: .5px; color: #c0d0c6; }
+.map-legend { display: flex; flex-wrap: wrap; gap: 5px 12px; font: 9px var(--mono); letter-spacing: 0; line-height: 1.5; margin: 10px 0; color: #d3dfd2; }
+.map-legend span { display: inline-flex; gap: 4px; }
+.hunter-key { display: grid; grid-template-columns: 1fr 1fr; gap: 9px 6px; padding: 10px 0; border-top: 1px solid var(--line); }
+.hunter-observation { display: flex; align-items: center; gap: 5px; min-width: 0; }
+.hunter-glyph { flex: 0 0 22px; width: 22px; height: 22px; }
+.hunter-glyph circle, .hunter-glyph rect, .hunter-glyph path { fill: #111e23; stroke: currentColor; stroke-width: 1.5; }
+.hunter-glyph text { fill: #fff; font: bold 12px var(--mono); text-anchor: middle; }
+.hunter-observation b { display: block; color: #f0ede1; font: 10px var(--mono); }
+.hunter-observation small { display: block; color: #c3d0c6; font: 7px var(--mono); margin-top: 3px; line-height: 1.4; }
+.map-knowledge { margin: 0 0 8px; font: 8px var(--mono); color: #c6d9d1; line-height: 1.5; }
+.map-caption { font: 9px var(--mono); letter-spacing: .3px; gap: 8px; }
+.map-caption > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.map-caption button { font: 9px var(--mono); min-height: 28px; flex-shrink: 0; }
+.radar-status { font: 10px var(--mono); letter-spacing: .5px; margin-top: 6px; padding-top: 8px; }
+.map-high-contrast { background: #071215; border-color: #e7f6eb; }
+.map-high-contrast .hunter-glyph { color: #ffffff !important; }
+.collection-progress { height: 4px; max-width: 240px; margin-left: auto; background: #fff1; }
+.collection-progress i { display: block; height: 100%; background: #f5d69a; }
+.relic-status { color: #f5d69a !important; padding-top: 8px; }
+.large-map { width: min(100%, 44dvh); height: auto; aspect-ratio: 1; margin: auto; }
+.large-hunter-key { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
+.large-hunter-key > div { display: flex; align-items: center; gap: 8px; font: 11px var(--mono); color: #f0ede1; }
+.large-hunter-key small { display: block; font-size: 9px; color: #c3d0c6; margin-top: 5px; }
+.map-legend.detailed { font-size: 10px; gap: 8px 14px; }
+@media (max-height: 760px) and (min-width: 901px) {
+  .map-panel { width: min(calc(276px * var(--map-scale, 1)), calc(100dvh - 400px)); }
+  .hunter-key { gap: 5px; padding: 6px 0; }
+  .map-legend { margin: 6px 0; }
+}
+@media (max-height: 760px) {
+  .hunter-observation small, .map-knowledge { display: none; }
+}
+@media (max-width: 900px) {
+  .map-panel { left: 18px; top: 92px; width: calc(234px * var(--map-scale, 1)); max-width: 294px; max-height: calc(100dvh - 158px); }
+  .hunter-observation small { font-size: 7px; }
+}
+@media (max-width: 600px) {
+  .map-panel { left: 12px; top: 85px; width: min(calc(174px * var(--map-scale, 1)), calc(100vw - 160px)); padding: 8px; max-height: calc(100dvh - 160px); }
+  .map-heading { font-size: 8px; gap: 4px; }
+  .map-heading span:last-child { font-size: 7px; letter-spacing: 0; }
+  .wave-ring { width: 34px; height: 34px; flex-basis: 34px; }
+  .wave-status { font-size: 9px; letter-spacing: 0; }
+  .wave-readout small { font-size: 7px; letter-spacing: 0; }
+  .map-legend { font-size: 8px; gap: 3px 9px; }
+  .hunter-key { grid-template-columns: 1fr; gap: 6px; padding: 8px 0; }
+  .hunter-observation b { font-size: 9px; }
+  .hunter-observation small { font-size: 8px; }
+  .map-knowledge { font-size: 8px; }
+  .map-panel .map-caption, .map-caption button { font-size: 8px; }
+  .map-caption > span { display: none; }
+  .radar-status { font-size: 9px; }
+  .objective { right: 12px; top: 88px; width: 132px; }
+  .objective .eyebrow { font-size: 8px; letter-spacing: .5px; }
+  .objective p { font-size: 9px; }
+  .lives span { display: block; margin: 6px 0 0; font-size: 10px; }
+}
+@media (max-height: 620px) {
+  .map-panel { max-height: calc(100dvh - 142px); width: min(calc(234px * var(--map-scale, 1)), calc(100dvh - 220px), calc(100vw - 160px)); }
+  .hunter-key, .map-knowledge, .map-panel .map-legend { display: none; }
+  .wave-readout { margin-bottom: 6px; }
+  .map-panel .map-caption { display: flex; padding-top: 4px; }
+}
+@media (max-height: 500px) {
+  .map-panel { top: 78px; width: min(calc(180px * var(--map-scale, 1)), calc(100dvh - 245px)); padding: 8px; }
+  .map-heading { font-size: 8px; margin-bottom: 4px; }
+  .map-heading span:last-child { font-size: 7px; }
+  .wave-readout { gap: 6px; margin-bottom: 5px; }
+  .wave-ring { flex-basis: 30px; width: 30px; height: 30px; }
+  .wave-readout small { display: none; }
+  .wave-status { font-size: 8px; letter-spacing: 0; }
+  .map-caption > span { display: none; }
+  .map-caption button { min-height: 24px; padding: 0; }
+  .radar-status { font-size: 8px; padding-top: 4px; margin-top: 2px; }
+}

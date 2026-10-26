@@ -1,0 +1,21 @@
+import { describe, expect, it } from 'vitest';
+import { Simulation, type Input } from '../../src/game/simulation';
+import { LEVELS, worldAt } from '../../src/game/levels';
+const idle: Input = { forward: 0, right: 0, sprint: false, turn: 0 };
+const tick = (s: Simulation, n = 1) => { for (let i = 0; i < n; i++) s.step(1 / 60, idle); };
+const start = () => { const s = new Simulation(); s.start(); return s; };
+const atContact = (s: Simulation) => { s.time = 10; s.position = worldAt(s.level.spots.contact); s.enemies[0].position = { ...s.position }; s.enemies[0].route = []; s.enemies[0].state = 'chase'; };
+describe('collect/evade/reverse regression', () => {
+  it('collects a mote and scores exactly once', () => { const s = start(), p = s.pickups.find(p => p.kind === 'mote')!; s.position = { ...p.position }; tick(s); expect(p.collected).toBe(true); expect(s.score).toBe(10); tick(s, 60); expect(s.score).toBe(10); });
+  it('overload frightens hunters and contact makes a returning wisp', () => { const s = start(), p = s.pickups.find(p => p.kind === 'charge')!; s.position = { ...p.position }; tick(s); expect(s.overload).toBe(8); expect(s.enemies[0].state).toBe('frightened'); s.enemies[0].position = { ...s.position }; s.enemies[0].route = []; tick(s); expect(s.enemies[0].state).toBe('returning'); expect(s.score).toBe(250); });
+  it('refreshes rather than stacks overload', () => { const s = start(), p = s.pickups.filter(p => p.kind === 'charge'); s.position = p[0].position; tick(s); s.position = p[1].position; tick(s); expect(s.overload).toBe(8); });
+  it('capture consumes one chance and freezes time', () => { const s = start(); atContact(s); tick(s); expect(s.lives).toBe(2); expect(s.mode).toBe('caught'); const t = s.time; tick(s, 100); expect(s.time).toBe(t); });
+  it('respawn preserves pickups and moves all hunters into Lockup', () => { const s = start(), p = s.pickups.find(p => p.kind === 'charge')!; p.collected = true; atContact(s); s.capture(); s.resumeAfterCapture(); expect(s.mode).toBe('paused'); expect(p.collected).toBe(true); expect(s.lives).toBe(2); expect(s.position).toEqual(worldAt(s.level.start)); expect(s.enemies.every(e => e.state === 'locked')).toBe(true); expect(s.grace - s.time).toBe(3); });
+  it('cannot capture in refuge or practice', () => { const s = start(); s.time = 20; s.capture(); expect(s.mode).toBe('playing'); s.position = worldAt(s.level.spots.contact); s.practice = true; s.capture(); expect(s.mode).toBe('playing'); });
+  it('requires all motes but not every optional charge for victory', () => { const s = start(); s.enemies = []; s.pickups.forEach(p => { if (p.kind === 'mote') p.collected = true; }); s.position = worldAt(s.level.exit); tick(s); expect(s.mode).toBe('won'); const score = s.score; tick(s, 120); expect(s.score).toBe(score); });
+  it('does not open exit early', () => { const s = start(); s.position = worldAt(s.level.exit); tick(s); expect(s.exitOpen).toBe(false); expect(s.mode).toBe('playing'); });
+  it('freezes resource and wave timers while paused', () => { const s = start(); s.pulse(); s.overload = 5; s.pause(); const wave = s.waveRemaining; tick(s, 100); expect(s.radarCooldown).toBe(16); expect(s.overload).toBe(5); expect(s.waveRemaining).toBe(wave); });
+  it('restores relays only once', () => { const s = start(); s.position = worldAt(s.level.relays[0]); s.interact(); s.interact(); expect(s.relays.size).toBe(1); expect(s.score).toBe(150); });
+  it('radar has a bounded cooldown and expiring noise', () => { const s = start(); s.pulse(); s.pulse(); expect(s.noises.length).toBe(1); tick(s, 300); expect(s.noises.length).toBe(0); });
+  it('each chapter has four power cells and four personalities', () => { for (const l of LEVELS) { const s = new Simulation(l); expect(s.pickups.filter(p => p.kind === 'charge')).toHaveLength(4); expect(s.enemies.map(e => e.kind)).toEqual(['Stalker', 'Mimic', 'Puppet', 'Weeper']); } });
+});
