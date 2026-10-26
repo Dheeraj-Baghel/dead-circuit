@@ -1,7 +1,13 @@
 # DEAD CIRCUIT v2 — local release-candidate handoff
 
 24 October 2026. **Engineering implementation/checkpoints complete; human release
-approval is still pending. No publication or deployment has been performed.**
+approval is still pending.**
+
+**26 October 2026 hosting update:** the user authorized a private GitHub repository
+and public Vercel hosting. [Play the hosted build](https://dead-circuit-softtech10.vercel.app)
+or see [deployment details](DEPLOYMENT.md). 173 unit tests and 6 fixture-free hosted
+Chrome workflows freshly pass. The earlier engineering results below are retained
+history; human approval and franchise clearance are not established by hosting.
 
 **Current addition:** the user's Luall_Studio **Pacman animated** GLB is now the
 visible third-person player, with its real Eating bone animation. Third person

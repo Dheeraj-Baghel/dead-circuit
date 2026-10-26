@@ -76,8 +76,9 @@ playback rate and a small material readability adjustment. The creator's file
 bytes, skin and animation tracks are unchanged.
 
 The creator's license is not underlying Pac-Man franchise/trademark clearance.
-No creator endorsement, commercial/public-release authorization or deployment
-is claimed. The previous all-CC0/no-franchise-art description no longer applies
+The user authorized [Vercel hosting](DEPLOYMENT.md) on 26 October 2026; no creator
+endorsement or underlying franchise/public-use clearance is claimed.
+The previous all-CC0/no-franchise-art description no longer applies
 to the player; scenery/effect provenance remains separately tracked.
 
 The Blender-only [MarbleMan Gobbler](https://opengameart.org/content/marbleman-gobbler-with-animation)

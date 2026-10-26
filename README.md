@@ -5,13 +5,19 @@ view, and a persistent **2D minimap on the left**.
 
 **Play locally: [http://127.0.0.1:4332](http://127.0.0.1:4332/)**
 
+**Live game:** [https://dead-circuit-softtech10.vercel.app](https://dead-circuit-softtech10.vercel.app)
+· **Private source:** [Dheeraj-Baghel/dead-circuit](https://github.com/Dheeraj-Baghel/dead-circuit)
+· [Deployment and hosted verification](DEPLOYMENT.md).
+Pushes to `main` deploy automatically. Hosted playtest, not human release approval
+or underlying Pac-Man franchise clearance. Node 24; no backend or account required.
+
 ## Current checkpoint: uploaded animated player + third-person follow camera
 
 The approved [v2 plan](../.designer/plans/dead-circuit-v2-first-person-horror-pac-man-4ac88def.md)
 upgrades this app in place. **All five engineering checkpoints are implemented
-and verified.** This is a local playtest candidate, not human release approval.
+and verified.** This is a playtest candidate, not human release approval.
 Human balance/scare/sound review, Firefox/physical Safari/device qualification
-and any deployment remain open. See the [release handoff](RELEASE.md).
+remain open. Hosting was authorized on 26 October 2026. See the [release handoff](RELEASE.md).
 
 ### Uploaded model is now in use
 
@@ -30,7 +36,13 @@ and any deployment remain open. See the [release handoff](RELEASE.md).
   the original view. Missing required player data gives an explicit retry state,
   not a silent static substitute.
 - **173 units / 71 Chrome workflows**, fresh isolated install/build, asset hash
-  audit and bounded Chrome/WebKit production smoke pass. No deployment.
+  audit and bounded Chrome/WebKit production smoke passed before hosting.
+  Deployment checks freshly passed 173 units and **6/6 fixture-free hosted Chrome
+  workflows**; the full 71 dev/browser workflows were not rerun for deployment.
+
+Raw asset downloads and local captures under `asset-inbox/` and `artifacts/` are
+kept in this workspace, not pushed to GitHub or served by Vercel. The preview links
+below are workspace-local evidence; runtime assets/licences and all source are in Git.
 
 [Animated gameplay preview](artifacts/testing/third-person/animated-player.gif) ·
 [Model and camera notes](PLAYER_MODEL.md) ·
